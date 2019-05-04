@@ -115,11 +115,18 @@ class Individual:
         self.root = Node()
         self.size = 0
 
-    def recombine(self, other):
-        self.root.recombine(other)
+    def __lt__(self, other):
+        self.fitness < other.fitness
 
-    def evaluate(self, problem):
+    def recombine(self, other):
+        self.root.recombine(other.root)
+
+    def evaluate(self, problem, current_time):
         '''
         this is where the  p a i n  happens
         '''
-        pass
+        for task in problem.tasks:
+            task.priority = self.root.evaluate(task, current_time)
+        # schedule as heuristic monotonic
+        problem.tasks.sort() # sort by priority
+        # TODO: simulate scheduling tasks
