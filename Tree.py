@@ -1,9 +1,10 @@
-from Operations import * # import operation constants (bastardized Sum-Type)
+from Operations import *  # import operation constants (bastardized Sum-Type)
 from random import choice, randint
 from copy import deepcopy
 
+
 class Node:
-    def __init__(self, left = None, right = None, val = 0, op = CONST):
+    def __init__(self, left=None, right=None, val=0, op=CONST):
         self.left = left
         self.right = right
         self.val = val
@@ -45,6 +46,7 @@ class Node:
         Copyright Kool Kids Klub
         '''
         tree_array = []
+
         def choose_r(tree_array, node, i):
             if node.left != None:
                 tree_array += [2 * (i + 1)]
@@ -59,7 +61,7 @@ class Node:
         while random_node != 0:  # generate lineage
             parent_list += [random_node // 2]
         parent_list.reverse()
-        parent_list.pop() # remove self, last element is parent
+        parent_list.pop()  # remove self, last element is parent
         current_node = self
         for node_idx in parent_list:
             # follow tree back to chosen node
@@ -67,7 +69,7 @@ class Node:
         if graft:
             if random_node == 0:
                 self = deepcopy(node)
-            if random_node % 2 == 0: # graft on randomly selected node
+            if random_node % 2 == 0:  # graft on randomly selected node
                 current_node.left = node
             else:
                 current_node.right = node
@@ -100,7 +102,7 @@ class Node:
         elif self.op == TIMES:
             return self.left.evaluate(task, current_time) * self.right.evaluate(task, current_time)
         elif self.op == DIVIDED_BY:
-            right=self.right.evaluate(task, current_time)
+            right = self.right.evaluate(task, current_time)
             return 0 if right == 0 else self.left.evaluate(task, current_time) / right
         elif self.op == MAX:
             return max(self.left.evaluate(task, current_time), self.right.evaluate(task, current_time))
@@ -108,6 +110,7 @@ class Node:
             return min(self.left.evaluate(task, current_time), self.right.evaluate(task, current_time))
         elif self.op == CURRENT_TIME:
             return current_time
+
 
 class Individual:
     def __init__(self):
@@ -128,5 +131,5 @@ class Individual:
         for task in problem.tasks:
             task.priority = self.root.evaluate(task, current_time)
         # schedule as heuristic monotonic
-        problem.tasks.sort() # sort by priority
+        problem.tasks.sort()  # sort by priority
         # TODO: simulate scheduling tasks

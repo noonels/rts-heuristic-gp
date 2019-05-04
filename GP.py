@@ -6,9 +6,11 @@ K_CONST = 5
 MAX_ITERATIONS = 50000
 MIN_DELTA = 0.001
 
+
 class GP:
     def __init__(self, population_size=100, children_size=10, mutation=0.05):
-        self.population = [0 for x in range(population_size)] # dummy population representation
+        # dummy population representation
+        self.population = [0 for x in range(population_size)]
         self.parents = []
         self.population_size = population_size
         self.children = []
@@ -19,10 +21,11 @@ class GP:
         # K-tournament
         self.parents = []
         for _ in range(self.children_size):
-           self.parents += max(sample(self.population, K_CONST))
+            self.parents += max(sample(self.population, K_CONST))
 
     def childGeneration(self):
-        self.children = [parent_pair[0].recombine(parent_pair[1]) for parent_pair in self.parents]
+        self.children = [parent_pair[0].recombine(
+            parent_pair[1]) for parent_pair in self.parents]
 
     def recombination(self):
         self.population.append(self.children)
