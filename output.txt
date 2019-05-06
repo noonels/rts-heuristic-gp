@@ -1,0 +1,163 @@
+==== RUN 0 ====
+best: 1.7
+heuristic: (TASK_RELEASE * (TASK_DEADLINE % BLK_ST))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 1 ====
+best: 1.7
+heuristic: (72 + (TASK_PERIOD - BLK_ST))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 2 ====
+best: 1.5333333333333332
+heuristic: (((TASK_RELEASE * 71) - (TASK_EXEC + BLK_TOT)) * (MIN(JOB_DEADLINE, TASK_RELEASE) + (JOB_DEADLINE * BLK_ST)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 3 ====
+best: 1.5333333333333332
+heuristic: ((MAX(TASK_EXEC, TASK_DEADLINE) / MAX(TASK_EXEC, JOB_DEADLINE)) / (MIN(TASK_DEADLINE, TASK_PERIOD) / (TASK_RELEASE / BLK_ST)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 4 ====
+best: 1.5333333333333332
+heuristic: (MIN(MAX(TASK_PERIOD, TASK_RELEASE), (TASK_DEADLINE - TASK_RELEASE)) - ((JOB_DEADLINE * JOB_DEADLINE) + (TIME % TASK_EXEC)))
+stats: [[1.0, 1.0, None], [0.9545454545454546, 1.0, None]]
+==== RUN 5 ====
+best: 2.5
+heuristic: BLK_ST
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 6 ====
+best: 2.0
+heuristic: TIME
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 7 ====
+best: 1.5333333333333332
+heuristic: (((TIME % BLK_TOT) % (36 * JOB_DEADLINE)) * ((BLK_TOT - BLK_ST) * (42 + TASK_PERIOD)))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 8 ====
+best: 1.5333333333333332
+heuristic: MIN((MAX(TIME, 221) / (TASK_DEADLINE % TASK_RELEASE)), ((JOB_DEADLINE % TASK_EXEC) * (JOB_DEADLINE % TASK_RELEASE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 9 ====
+best: 1.5333333333333332
+heuristic: (((TASK_DEADLINE / JOB_DEADLINE) / (TASK_RELEASE + JOB_DEADLINE)) * ((JOB_DEADLINE + TASK_DEADLINE) + (BLK_TOT - JOB_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 10 ====
+best: 1.5333333333333332
+heuristic: MAX((MIN(TASK_EXEC, TASK_RELEASE) - (BLK_TOT + BLK_ST)), (MAX(TIME, TASK_EXEC) - (BLK_ST - JOB_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 11 ====
+best: 1.5333333333333332
+heuristic: (((TASK_EXEC / BLK_TOT) * MIN(TASK_DEADLINE, JOB_DEADLINE)) + MIN((TIME + TASK_DEADLINE), (TASK_DEADLINE - TASK_PERIOD)))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 12 ====
+best: 1.5333333333333332
+heuristic: (MAX((TASK_PERIOD * TIME), MIN(147, TASK_EXEC)) + ((TASK_EXEC % BLK_ST) * (TIME / TASK_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 13 ====
+best: 1.5333333333333332
+heuristic: ((MAX(162, TASK_RELEASE) / MIN(TASK_DEADLINE, JOB_DEADLINE)) * ((48 - TIME) % (JOB_DEADLINE * TASK_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 14 ====
+best: 1.7
+heuristic: ((TASK_EXEC % TASK_DEADLINE) * BLK_TOT)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 15 ====
+best: 1.5333333333333332
+heuristic: (MIN((TIME + 109), (TIME - TASK_PERIOD)) * ((TASK_DEADLINE - TASK_RELEASE) * (BLK_ST / TASK_RELEASE)))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 16 ====
+best: 1.5333333333333332
+heuristic: (((TASK_PERIOD * BLK_ST) + MAX(TIME, TASK_RELEASE)) / MIN((TASK_PERIOD - JOB_DEADLINE), (BLK_TOT * TASK_EXEC)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 17 ====
+best: 1.8333333333333333
+heuristic: (BLK_TOT + TASK_EXEC)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 18 ====
+best: 1.5333333333333332
+heuristic: MAX((MIN(TASK_EXEC, TASK_PERIOD) + MAX(JOB_DEADLINE, JOB_DEADLINE)), ((BLK_TOT / TIME) % (TASK_DEADLINE / BLK_TOT)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 19 ====
+best: 1.5333333333333332
+heuristic: (((48 / BLK_TOT) * (TASK_EXEC + 12)) + MIN(MAX(JOB_DEADLINE, JOB_DEADLINE), (TASK_DEADLINE - TASK_PERIOD)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 20 ====
+best: 1.5714285714285714
+heuristic: MAX((JOB_DEADLINE / (TASK_DEADLINE - TASK_EXEC)), TASK_RELEASE)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 21 ====
+best: 2.5
+heuristic: 2
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 22 ====
+best: 1.5333333333333332
+heuristic: MAX(((TASK_PERIOD * TASK_EXEC) / (TASK_PERIOD - JOB_DEADLINE)), MIN(MIN(TASK_PERIOD, BLK_ST), MAX(BLK_ST, JOB_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 23 ====
+best: 1.5333333333333332
+heuristic: ((MAX(TASK_EXEC, TASK_EXEC) - MIN(TASK_RELEASE, BLK_TOT)) / ((TASK_RELEASE - BLK_ST) % MIN(JOB_DEADLINE, JOB_DEADLINE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 24 ====
+best: 1.5555555555555556
+heuristic: MAX(BLK_ST, ((BLK_ST + JOB_DEADLINE) * MAX(JOB_DEADLINE, BLK_ST)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 25 ====
+best: 1.5333333333333332
+heuristic: (MIN((BLK_ST / 177), (TASK_DEADLINE * BLK_TOT)) - MIN((JOB_DEADLINE - JOB_DEADLINE), (JOB_DEADLINE + TASK_PERIOD)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 26 ====
+best: 1.8333333333333333
+heuristic: (TASK_DEADLINE + TASK_DEADLINE)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 27 ====
+best: 1.5666666666666667
+heuristic: (MIN(MIN(BLK_ST, TASK_PERIOD), (TASK_PERIOD + TASK_RELEASE)) * (MIN(TASK_EXEC, TASK_RELEASE) / (TASK_EXEC * TASK_EXEC)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 28 ====
+best: 1.6666666666666665
+heuristic: MAX(JOB_DEADLINE, JOB_DEADLINE)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 29 ====
+best: 1.6428571428571428
+heuristic: (BLK_ST * ((BLK_TOT * BLK_ST) % TASK_EXEC))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 30 ====
+best: 1.5333333333333332
+heuristic: (((JOB_DEADLINE * TASK_EXEC) + (JOB_DEADLINE % TASK_PERIOD)) * ((TIME / TASK_EXEC) / MAX(TASK_RELEASE, TASK_RELEASE)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 31 ====
+best: 1.5333333333333332
+heuristic: (((BLK_ST * BLK_TOT) % (TASK_PERIOD - JOB_DEADLINE)) * ((TASK_DEADLINE % BLK_ST) * (JOB_DEADLINE - TASK_PERIOD)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 32 ====
+best: 2.5
+heuristic: BLK_ST
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 33 ====
+best: 1.8333333333333333
+heuristic: (199 + TASK_EXEC)
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 34 ====
+best: 1.5333333333333332
+heuristic: MIN(MAX((TASK_DEADLINE * TIME), MIN(JOB_DEADLINE, BLK_TOT)), ((TIME - TASK_DEADLINE) + (BLK_TOT * TASK_EXEC)))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 35 ====
+best: 1.6428571428571428
+heuristic: (TASK_EXEC % MAX((TASK_RELEASE / BLK_ST), TASK_EXEC))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 36 ====
+best: 1.5333333333333332
+heuristic: MAX(MIN((BLK_ST - BLK_TOT), MIN(TASK_RELEASE, BLK_ST)), ((TASK_PERIOD % TIME) / (TIME + TASK_EXEC)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+==== RUN 37 ====
+best: 1.5333333333333332
+heuristic: (((JOB_DEADLINE % 187) * (TASK_RELEASE + JOB_DEADLINE)) + (MIN(JOB_DEADLINE, TIME) - (TASK_DEADLINE / 225)))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 38 ====
+best: 1.6
+heuristic: MIN(TASK_EXEC, (BLK_ST - JOB_DEADLINE))
+stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+==== RUN 39 ====
+best: 1.5333333333333332
+heuristic: ((MIN(JOB_DEADLINE, BLK_TOT) - (TASK_PERIOD / TASK_RELEASE)) % (MAX(JOB_DEADLINE, TIME) % MAX(BLK_TOT, TIME)))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 1.7
+heuristic: (TASK_RELEASE * (TASK_DEADLINE % BLK_ST))
+stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
