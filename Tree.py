@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice, randint, shuffle
 from statistics import mean
 from copy import deepcopy
 from Operations import *  # import operation constants (bastardized Sum-Type)
@@ -245,6 +245,7 @@ class Individual:
                 if just_popped:
                     for job in job_queue:
                         job.priority = self.root.evaluate(job, time)
+                    shuffle(job_queue)
                     job_queue.sort()
                 if len(job_queue) > 0:
                     if time > job_queue[0].blocking_start and job_queue[0].blocking_duration > 0:
@@ -253,6 +254,7 @@ class Individual:
                         if not just_popped:
                             for job in job_queue:
                                 job.priority = self.root.evaluate(job, time)
+                            shuffle(job_queue)
                             job_queue.sort()
                         else:
                             just_popped = False
@@ -270,7 +272,7 @@ class Individual:
                             job_queue.pop()
                             just_popped = True
                     for job in job_queue:
-                        if job.deadline != 0 and job.deadline > time and job.exec_time > 0:
+                        if job.deadline != 0 and job.deadline < time and job.exec_time > 0:
                             if job.task.period != 0:
                                 missed_periodic_deadlines += 1
                             else:

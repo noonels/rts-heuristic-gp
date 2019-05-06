@@ -72,7 +72,7 @@ class GP:
 
     def run(self, problems):
         bests = []
-        for _ in range(40):
+        for run in range(40):
             self.__init__()
             delta = 0
             last_avg = 0
@@ -92,8 +92,9 @@ class GP:
                 delta = avg - last_avg
                 last_avg = avg
                 # print('\tevaluations: {}'.format(self.evaluations))
+            print('==== RUN {} ===='.format(run))
             current_best = max(self.population)
-            print('best: {}\nheuristic: {}'.format(
+            print('best: {}\nheuristic: {}\n'.format(
                 current_best.fitness, current_best.root.string()))
             bests.append(max(self.population))
         best = max(bests)
