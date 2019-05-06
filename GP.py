@@ -43,11 +43,13 @@ class GP:
                 random_tree = Individual(self.parsimony)
                 random_tree.root.grow(3)
                 parent_copy = deepcopy(self.parents[i])
+                parent_copy.stats = []
                 parent_copy.root.choose_node(True, random_tree.root)
                 self.children.append(parent_copy)
             else:
-                self.children.append(deepcopy(self.parents[i]).recombine())
-                self.parents[i + 1 % self.children_size]
+                parent_copy = deepcopy(self.parents[i]).recombine(self.parents[i+1%self.children_size])
+                parent_copy.stats = []
+                self.children.append(parent_copy)
 
     def reintroduction(self):
         self.population += self.children
@@ -94,11 +96,13 @@ class GP:
                 # print('\tevaluations: {}'.format(self.evaluations))
             print('==== RUN {} ===='.format(run))
             current_best = max(self.population)
-            print('best: {}\nheuristic: {}\n'.format(
+            print('best: {}\nheuristic: {}'.format(
                 current_best.fitness, current_best.root.string()))
-            bests.append(max(self.population))
+            print('stats: {}'.format(current_best.stats))
+            bests.append(current_best)
         best = max(bests)
         print('best: {}\nheuristic: {}'.format(best.fitness, best.root.string()))
+        print('stats: {}'.format(best.stats))
 
 
 # Helper Functions

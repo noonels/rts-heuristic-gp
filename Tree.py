@@ -193,6 +193,7 @@ class Individual:
     def __init__(self, parsimony = 0.5):
         self.fitness = 0
         self.fitnesses = []
+        self.stats = []
         self.root = Node()
         self.size = 0
         self.parsimony = parsimony
@@ -280,4 +281,5 @@ class Individual:
                             job_queue.remove(job)
                 fitness_vals.append((1-missed_periodic_deadlines/total_periodic)*2 + (1-missed_sporadic_deadlines/total_sporadic) + (1/sum_response_time))
             self.fitnesses.append( (mean(fitness_vals) - self.tree_complexity()) / 2)
+            self.stats.append([1-(missed_periodic_deadlines/total_periodic), 1-(missed_sporadic_deadlines/total_sporadic), 1/sum_response_time if sum_response_time != 1 else None])
         self.fitness = max(self.fitnesses)
