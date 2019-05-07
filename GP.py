@@ -100,6 +100,7 @@ class GP:
                 current_best.fitness, current_best.root.string()))
             print('stats: {}'.format(current_best.stats))
             bests.append(current_best)
+        print('==== GLOBAL OPTIMUM ====')
         best = max(bests)
         print('best: {}\nheuristic: {}'.format(best.fitness, best.root.string()))
         print('stats: {}'.format(best.stats))

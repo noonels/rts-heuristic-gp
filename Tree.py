@@ -199,7 +199,7 @@ class Individual:
         self.parsimony = parsimony
 
     def __lt__(self, other):
-        self.fitness < other.fitness
+        return self.fitness < other.fitness
 
     def grow(self, depth):
         self.root.grow(depth)
