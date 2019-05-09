@@ -8,6 +8,7 @@ from Task import Problem
 K_CONST = 10
 MAX_EVALUATIONS = 2000
 MIN_DELTA = 0.001
+RUNS = 30
 
 
 class GP:
@@ -74,7 +75,10 @@ class GP:
 
     def run(self, problems):
         bests = []
-        for run in range(40):
+        generations = ceil((MAX_EVALUATIONS - self.population_size)/self.children_size)+2
+        data_best = [[] for i in range(generations)]  # preallocate statistics arrays
+        data_avg = [[] for i in range(generations)]
+        for run in range(RUNS):
             self.__init__()
             delta = 0
             last_avg = 0
@@ -83,6 +87,10 @@ class GP:
             self.evaluate(problems)
             self.population = self.children
             # end init
+            fitness_data = [i.fitness for i in self.population]
+            data_best[0].append(max(fitness_data))
+            data_avg[0].append(mean(fitness_data))
+            generation = 1
             while self.not_finished(delta):
                 self.parentSelection()
                 self.childGeneration()
@@ -90,10 +98,15 @@ class GP:
                 self.reintroduction()  # reintroduce children to population
                 self.survivalSelection()
                 # setting loop variables
-                avg = mean([i.fitness for i in self.population])
-                delta = avg - last_avg
-                last_avg = avg
+                # avg = mean([i.fitness for i in self.population])
+                # delta = avg - last_avg
+                # last_avg = avg
                 # print('\tevaluations: {}'.format(self.evaluations))
+                fitness_data = [i.fitness for i in self.population]
+                # print('Max Generations: {}\tGeneration: {}'.format(generations, generation))
+                data_best[generation].append(max(fitness_data))
+                data_avg[generation].append(mean(fitness_data))
+                generation += 1
             print('==== RUN {} ===='.format(run))
             current_best = max(self.population)
             print('best: {}\nheuristic: {}'.format(
@@ -104,6 +117,7 @@ class GP:
         best = max(bests)
         print('best: {}\nheuristic: {}'.format(best.fitness, best.root.string()))
         print('stats: {}'.format(best.stats))
+        # print(data_avg)
 
 
 # Helper Functions

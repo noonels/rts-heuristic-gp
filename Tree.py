@@ -282,4 +282,4 @@ class Individual:
                 fitness_vals.append((1-missed_periodic_deadlines/total_periodic)*2 + (1-missed_sporadic_deadlines/total_sporadic) + (1/sum_response_time))
             self.fitnesses.append( (mean(fitness_vals) - self.tree_complexity()) / 2)
             self.stats.append([1-(missed_periodic_deadlines/total_periodic), 1-(missed_sporadic_deadlines/total_sporadic), 1/sum_response_time if sum_response_time != 1 else None])
-        self.fitness = max(self.fitnesses)
+        self.fitness = mean(self.fitnesses)
