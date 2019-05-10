@@ -2,6 +2,8 @@ from random import sample, randrange
 from copy import deepcopy
 from statistics import mean
 from math import floor, ceil
+import numpy as np
+import matplotlib.pyplot as plt
 from Tree import Individual, Node
 from Task import Problem
 
@@ -70,18 +72,16 @@ class GP:
             individual.evaluate(problems)
             self.evaluations += 1
 
-    def not_finished(self, delta):
-        return self.evaluations <= MAX_EVALUATIONS #self.evaluations >= MAX_EVALUATIONS or delta <= MIN_DELTA
+    def not_finished(self):
+        return self.evaluations <= MAX_EVALUATIONS
 
     def run(self, problems):
         bests = []
         generations = ceil((MAX_EVALUATIONS - self.population_size)/self.children_size)+2
-        data_best = [[] for i in range(generations)]  # preallocate statistics arrays
+        data_best = [[] for i in range(generations)] # preallocate statistics arrays
         data_avg = [[] for i in range(generations)]
         for run in range(RUNS):
             self.__init__()
-            delta = 0
-            last_avg = 0
             # initial evaluation
             self.children = self.population
             self.evaluate(problems)
@@ -91,19 +91,13 @@ class GP:
             data_best[0].append(max(fitness_data))
             data_avg[0].append(mean(fitness_data))
             generation = 1
-            while self.not_finished(delta):
+            while self.not_finished():
                 self.parentSelection()
                 self.childGeneration()
-                self.evaluate(problems)  # update fitness
-                self.reintroduction()  # reintroduce children to population
+                self.evaluate(problems) # update fitness
+                self.reintroduction()   # reintroduce children to population
                 self.survivalSelection()
-                # setting loop variables
-                # avg = mean([i.fitness for i in self.population])
-                # delta = avg - last_avg
-                # last_avg = avg
-                # print('\tevaluations: {}'.format(self.evaluations))
                 fitness_data = [i.fitness for i in self.population]
-                # print('Max Generations: {}\tGeneration: {}'.format(generations, generation))
                 data_best[generation].append(max(fitness_data))
                 data_avg[generation].append(mean(fitness_data))
                 generation += 1
@@ -117,8 +111,13 @@ class GP:
         best = max(bests)
         print('best: {}\nheuristic: {}'.format(best.fitness, best.root.string()))
         print('stats: {}'.format(best.stats))
-        # print(data_avg)
-
+        data_avg  = [i for i in map(mean, data_avg)] # lord forgive me
+        data_best = [i for i in map(mean, data_best)]
+        x = np.arange(self.population_size, self.population_size+self.children_size*generations, self.children_size)
+        plt.plot(x, data_avg, x, data_best)
+        plt.xlabel('Evaluations')
+        plt.ylabel('Fitness')
+        plt.show()
 
 # Helper Functions
 

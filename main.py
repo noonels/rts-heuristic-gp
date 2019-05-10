@@ -3,14 +3,35 @@ from Task import Problem, Task
 
 def main():
     gp = GP()
-    task_list = [Task(0, 6, 14, 5, 2, 2), Task(0, 2, 17, 7, 2, 4), Task(0, 0, 18, 6, 1, 4)]
-    problem1 = Problem(task_list, 20)
-    # task_list = [Task()]
-    task_list = [Task(2, 0, 2, 0.5), Task(3, 0, 3, 1), Task(7, 0, 7, 0.45)]
-    problem2 = Problem(task_list, 42)
-    # problem3 = Problem()
-    # problem4 = Problem()
-    problems = [problem1, problem2]
+    problems = []
+    task_list = [Task(period=0, release=6, deadline=14, exec_time=5, blk_st=2, blk_dur=2),
+                 Task(period=0, release=2, deadline=17, exec_time=7, blk_st=2, blk_dur=4),
+                 Task(period=0, release=0, deadline=18, exec_time=6, blk_st=1, blk_dur=4)]
+    problems.append(Problem(task_list, 20))
+
+    task_list = [Task(period=2, deadline=2, exec_time=1),
+                 Task(period=3, deadline=3, exec_time=2),
+                 Task(period=7, deadline=7, exec_time=3)]
+    problems.append(Problem(task_list, 42))
+
+    task_list = [Task(period=2.5, exec_time=2, deadline=3),
+                 Task(period=4,   exec_time=1, deadline=4),
+                 Task(period=5,   exec_time=2, deadline=5)]
+    problems.append(Problem(task_list, 20))
+
+    task_list = [Task(period=3, exec_time=1, deadline=3),
+                 Task(period=4, exec_time=1, deadline=4),
+                 Task(period=5, exec_time=1, deadline=5),
+                 Task(exec_time=12),
+                 Task(exec_time=10)]
+    problems.append(Problem(task_list, 60))
+
+    task_list = [Task(period=5, exec_time=6, deadline=5),
+                 Task(period=6, exec_time=5, deadline=5),
+                 Task(period=9, exec_time=4, deadline=5),
+                 Task(exec_time=24),
+                 Task(exec_time=7, deadline=12)]
+    problems.append(Problem(task_list, 90))
     gp.run(problems)
 
 if __name__ == '__main__':

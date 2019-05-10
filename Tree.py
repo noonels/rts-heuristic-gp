@@ -120,11 +120,11 @@ class Node:
         elif self.op == RELEASE:
             return job.task.release
         elif self.op == PERIOD:
-            return job.task.period
+            return job.task.period if job.task.period != 0 else float('Inf')
         elif self.op == EXEC:
             return job.task.exec_time
         elif self.op == DEADLINE:
-            return job.task.deadline
+            return job.task.deadline if job.task.deadline != 0 else float('Inf')
         elif self.op == PLUS:
             return self.left.evaluate(job, current_time) + self.right.evaluate(job, current_time)
         elif self.op == MINUS:
@@ -145,9 +145,11 @@ class Node:
         elif self.op == CURRENT_TIME:
             return current_time
         elif self.op == J_DEADLINE:
-            return job.deadline
+            return job.deadline if job.deadline != 0 else float('Inf')
         elif self.op == J_RELEASE:
             return job.release
+        elif self.op == NOT_PERIODIC:
+            return 0 if job.task.period != 0 else 1 if job.task.deadline != 0 else 2
         else:
             print('HELP')
     
@@ -186,6 +188,8 @@ class Node:
             return 'JOB_DEADLINE'
         elif self.op == J_RELEASE:
             return 'JOB_DEADLINE'
+        elif self.op == NOT_PERIODIC:
+            return 'PERIODICITY'
         else:
             print('HELP')
 
@@ -219,6 +223,7 @@ class Individual:
     def evaluate(self, problems):
         'this is where the  p a i n  begins'
         fitness_vals = []
+        self.fitnesses = []
         for problem in problems:
             hyper_period = problem.hyper_period
             periodic = False
@@ -279,7 +284,7 @@ class Individual:
                             else:
                                 missed_sporadic_deadlines += 1
                             job_queue.remove(job)
-                fitness_vals.append((1-missed_periodic_deadlines/total_periodic)*2 + (1-missed_sporadic_deadlines/total_sporadic) + (1/sum_response_time))
-            self.fitnesses.append( (mean(fitness_vals) - self.tree_complexity()) / 2)
+                fitness_vals.append((1-missed_periodic_deadlines/total_periodic)**2 + (1-missed_sporadic_deadlines/total_sporadic) + (1/sum_response_time))
+            self.fitnesses.append(((mean(fitness_vals) - self.tree_complexity()) / 2) / 2.5)
             self.stats.append([1-(missed_periodic_deadlines/total_periodic), 1-(missed_sporadic_deadlines/total_sporadic), 1/sum_response_time if sum_response_time != 1 else None])
         self.fitness = mean(self.fitnesses)
