@@ -1,164 +1,124 @@
 ==== RUN 0 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7388309476496243
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [1.0, 1.0, None], [0.84, 1.0, 0.017543859649122806], [0.13043478260869568, 0.0, None]]
 ==== RUN 1 ====
-best: 2.5
-heuristic: TASK_PERIOD
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
+best: 0.7421166146298422
+heuristic: TASK_DEADLINE
+stats: [[1.0, 1.0, None], [0.5909090909090908, 1.0, None], [1.0, 1.0, None], [0.86, 1.0, 0.016666666666666666], [0.13043478260869568, 1.0, None]]
 ==== RUN 2 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7466444006209773
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6136363636363636, 1.0, None], [0.9375, 1.0, None], [0.88, 1.0, 0.01694915254237288], [0.10869565217391308, 1.0, None]]
 ==== RUN 3 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7442257260626297
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.5681818181818181, 1.0, None], [0.9375, 1.0, None], [0.88, 1.0, None], [0.08695652173913049, 1.0, 0.013513513513513514]]
 ==== RUN 4 ====
-best: 2.5
-heuristic: TASK_PERIOD
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7435324214546464
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.9, 1.0, None], [0.08695652173913049, 0.0, None]]
 ==== RUN 5 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7375613835414713
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [1.0, 1.0, None], [0.86, 1.0, 0.029411764705882353], [0.08695652173913049, 1.0, None]]
 ==== RUN 6 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7431056417544442
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.8200000000000001, 1.0, 0.00909090909090909], [0.08695652173913049, 1.0, None]]
 ==== RUN 7 ====
-best: 2.5
-heuristic: BLK_TOT
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7476657798454541
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6818181818181819, 1.0, None], [1.0, 1.0, None], [0.8200000000000001, 1.0, 0.00980392156862745], [0.15217391304347827, 1.0, None]]
 ==== RUN 8 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7445061211196958
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.8200000000000001, 1.0, 0.009009009009009009], [0.08695652173913049, 1.0, 0.011235955056179775]]
 ==== RUN 9 ====
-best: 2.5
-heuristic: TASK_PERIOD
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7460074083416829
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [1.0, 1.0, None], [0.86, 1.0, 0.0196078431372549], [0.10869565217391308, 1.0, None]]
 ==== RUN 10 ====
-best: 2.5
-heuristic: TASK_PERIOD
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7422668554117683
+heuristic: TASK_DEADLINE
+stats: [[1.0, 1.0, None], [0.7272727272727273, 1.0, None], [0.9375, 1.0, None], [0.8200000000000001, 1.0, 0.009345794392523364], [0.10869565217391308, 0.0, None]]
 ==== RUN 11 ====
-best: 2.5
-heuristic: 8
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7427180270255754
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.92, 1.0, 0.01639344262295082], [0.08695652173913049, 0.0, 0.01098901098901099]]
 ==== RUN 12 ====
-best: 2.5
-heuristic: TASK_RELEASE
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 13 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 14 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 15 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 16 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 17 ====
-best: 2.5
-heuristic: TASK_RELEASE
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 18 ====
-best: 2.5
-heuristic: BLK_TOT
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 19 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 20 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 21 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 22 ====
-best: 2.5
-heuristic: TASK_RELEASE
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 23 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 24 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 25 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 26 ====
-best: 2.5
-heuristic: BLK_TOT
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 27 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 28 ====
-best: 2.5
+best: 0.7398537232393472
 heuristic: TASK_PERIOD
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [0.9375, 1.0, None], [0.94, 1.0, 0.016666666666666666], [0.08695652173913049, 0.0, None]]
+==== RUN 13 ====
+best: 0.7474682328208702
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [0.9375, 1.0, None], [0.86, 1.0, 0.016666666666666666], [0.10869565217391308, 1.0, None]]
+==== RUN 14 ====
+best: 0.7398114241531065
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.7045454545454546, 1.0, None], [1.0, 1.0, None], [0.88, 1.0, 0.017543859649122806], [0.10869565217391308, 0.0, None]]
+==== RUN 15 ====
+best: 0.7422842953635223
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [0.9375, 1.0, None], [0.84, 1.0, 0.00909090909090909], [0.08695652173913049, 1.0, 0.011494252873563218]]
+==== RUN 16 ====
+best: 0.7468237662526853
+heuristic: TASK_DEADLINE
+stats: [[1.0, 1.0, None], [0.7272727272727273, 1.0, None], [0.9375, 1.0, None], [0.92, 1.0, 0.017241379310344827], [0.08695652173913049, 0.0, None]]
+==== RUN 17 ====
+best: 0.7459812744409007
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.84, 1.0, 0.008695652173913044], [0.08695652173913049, 1.0, None]]
+==== RUN 18 ====
+best: 0.7386723684448753
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.78, 1.0, 0.010309278350515464], [0.10869565217391308, 1.0, 0.011764705882352941]]
+==== RUN 19 ====
+best: 0.7456595680819675
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6136363636363636, 1.0, None], [0.9375, 1.0, None], [0.8200000000000001, 1.0, 0.008771929824561403], [0.08695652173913049, 1.0, 0.0125]]
+==== RUN 20 ====
+best: 0.7420191619001546
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.8200000000000001, 1.0, 0.009523809523809525], [0.10869565217391308, 1.0, None]]
+==== RUN 21 ====
+best: 0.7439447195452825
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [1.0, 1.0, None], [0.8, 1.0, 0.009615384615384616], [0.08695652173913049, 1.0, None]]
+==== RUN 22 ====
+best: 0.7405482525505461
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.84, 1.0, 0.02127659574468085], [0.13043478260869568, 1.0, None]]
+==== RUN 23 ====
+best: 0.7428368940545951
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6136363636363636, 1.0, None], [1.0, 1.0, None], [0.8200000000000001, 1.0, 0.009009009009009009], [0.10869565217391308, 1.0, None]]
+==== RUN 24 ====
+best: 0.7393923483360199
+heuristic: TASK_DEADLINE
+stats: [[1.0, 1.0, None], [0.6590909090909092, 1.0, None], [0.9375, 1.0, None], [0.9, 1.0, None], [0.15217391304347827, 0.0, None]]
+==== RUN 25 ====
+best: 0.7427937898090344
+heuristic: TASK_EXEC
+stats: [[1.0, 1.0, None], [0.5909090909090908, 1.0, None], [1.0, 1.0, None], [0.8, 1.0, 0.010101010101010102], [0.10869565217391308, 1.0, None]]
+==== RUN 26 ====
+best: 0.7457296914902269
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6818181818181819, 1.0, None], [0.9375, 1.0, None], [0.8, 1.0, 0.009345794392523364], [0.13043478260869568, 1.0, None]]
+==== RUN 27 ====
+best: 0.741756375085623
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.84, 1.0, 0.008620689655172414], [0.08695652173913049, 1.0, 0.011235955056179775]]
+==== RUN 28 ====
+best: 0.744498380531692
+heuristic: PERIODICITY
+stats: [[1.0, 1.0, None], [0.6818181818181819, 1.0, None], [0.9375, 1.0, None], [0.88, 1.0, None], [0.10869565217391308, 0.0, None]]
 ==== RUN 29 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [0.9772727272727273, 1.0, None]]
-==== RUN 30 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 31 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 32 ====
-best: 2.5
-heuristic: BLK_TOT
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 33 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 34 ====
-best: 2.5
-heuristic: TASK_DEADLINE
-stats: [[1.0, 1.0, None], [0.9545454545454546, 1.0, None]]
-==== RUN 35 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 36 ====
-best: 2.5
-heuristic: BLK_ST
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 37 ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 38 ====
-best: 2.5
-heuristic: 222
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
-==== RUN 39 ====
-best: 2.5
-heuristic: 85
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7481929063392326
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.86, 1.0, 0.017857142857142856], [0.10869565217391308, 1.0, None]]
 ==== GLOBAL OPTIMUM ====
-best: 2.5
-heuristic: TASK_EXEC
-stats: [[1.0, 1.0, None], [1.0, 1.0, None]]
+best: 0.7481929063392326
+heuristic: TASK_PERIOD
+stats: [[1.0, 1.0, None], [0.6363636363636364, 1.0, None], [0.9375, 1.0, None], [0.86, 1.0, 0.017857142857142856], [0.10869565217391308, 1.0, None]]
